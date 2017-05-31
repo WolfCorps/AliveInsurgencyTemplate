@@ -1,13 +1,7 @@
-#ifndef _SUB
-	//--- Unique for every mission variant
-	onLoadName = ACE Insurgency - GF Edit;
-	overviewPicture = \a3\Missions_F_curator\data\img\mp_zgm_m11_overview_ca.paa;
-#endif
-
 dev = "Wolf Corps";
 author = "Wolf Corps";
 //onLoadMission = "";
-overviewText = $STR_A3_moduleMPTypeGameMaster_overviewText;
+overviewText = "ALiVE Insurgency - Erobern Sie das Gebiet zurück, indem sie alle Feinde in den markierten Gebieten ausschalten.";
 overviewTextLocked = "";
 
 
@@ -23,7 +17,7 @@ aiKills  = 1;
 
 class Header
 {
-	gameType = ZGM;
+	gameType = COOP;
 	minPlayers = 1;
 	#ifdef _PARAMTYPE
 		maxPlayers = 18;
