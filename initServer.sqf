@@ -12,6 +12,32 @@
 
 };
 
+
+[] execVM "alive_loadTrace.sqf";
+
+ALIVE_TraceSaver = compile preprocessFileLineNumbers "alive_saveTrace.sqf";
+
+[] spawn {
+	diag_log "ALICE_TraceSaver initialized";
+	while {true} do {
+		sleep 60;
+		call ALIVE_TraceSaver;
+	};
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //--- Curator settings
 _curator = allcurators select 0;
 _curators = allcurators;
@@ -24,14 +50,3 @@ if (("CuratorGodMode" call bis_fnc_getParamValue) > 0) exitwith {
 	} foreach _curators;
 };
 
-[] execVM "alive_loadTrace.sqf";
-
-ALIVE_TraceSaver = compile preprocessFileLineNumbers "alive_loadTrace";
-
-[] spawn {
-	diag_log "ALICE_TraceSaver initialized";
-	while {true} do {
-		sleep 60;
-		call ALIVE_TraceSaver;
-	};
-};
